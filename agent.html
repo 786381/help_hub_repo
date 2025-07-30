@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agents - HelpHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .agents-bg {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(236, 253, 245, 0.8)), 
+                        url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-white to-cyan-100 font-sans min-h-screen">
+
+  <!-- Header Section -->
+  <header class="bg-cyan-100 py-6 md:py-10">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <div>
+        <h1 class="text-3xl md:text-4xl font-bold text-teal-700">HelpHub</h1>
+        <p class="text-base md:text-lg text-gray-600 mt-1 md:mt-2">Our Dedicated Agents</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <button id="mobile-menu-button" class="md:hidden p-2 rounded-full bg-gray-200 text-gray-700">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="bg-gray-100 shadow-md">
+    <div class="container mx-auto px-4">
+      <!-- Mobile menu (hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden py-2">
+        <div class="flex flex-col space-y-3 text-gray-800 font-semibold">
+          <a href="index.html" class="block px-3 py-2 rounded hover:bg-gray-200 hover:text-teal-700 transition">Home</a>
+          <a href="requesthelp.html" class="block px-3 py-2 rounded hover:bg-gray-200 hover:text-teal-700 transition">Request Help</a>
+          <a href="givenhelp.html" class="block px-3 py-2 rounded hover:bg-gray-200 hover:text-teal-700 transition">Give Help</a>
+          <a href="agent.html" class="block px-3 py-2 rounded bg-teal-100 text-teal-700 font-bold">Agents</a>
+          <a href="success-stories.html" class="block px-3 py-2 rounded hover:bg-gray-200 hover:text-teal-700 transition">Success Stories</a>
+          <a href="contact.html" class="block px-3 py-2 rounded hover:bg-gray-200 hover:text-teal-700 transition">Contacts</a>
+        </div>
+      </div>
+      
+      <!-- Desktop menu (hidden on mobile) -->
+      <div class="hidden md:block py-4">
+        <div class="flex flex-wrap justify-center gap-6 text-gray-800 font-semibold">
+          <a href="index.html" class="hover:text-teal-700 transition">Home</a>
+          <a href="requesthelp.html" class="hover:text-teal-700 transition">Request Help</a>
+          <a href="givenhelp.html" class="hover:text-teal-700 transition">Give Help</a>
+          <a href="agent.html" class="text-teal-700 font-bold">Agents</a>
+          <a href="success-stories.html" class="hover:text-teal-700 transition">Success Stories</a>
+          <a href="contact.html" class="hover:text-teal-700 transition">Contacts</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-12">
+    <div class="max-w-6xl mx-auto">
+      <!-- Hero Section -->
+      <section class="agents-bg rounded-xl shadow-lg p-8 md:p-12 mb-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Trusted Agents</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Meet our network of dedicated professionals ready to connect those in need with the right help.
+        </p>
+      </section>
+
+      <!-- Add Agent Form -->
+      <section class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-12">
+        <h2 class="text-2xl font-semibold text-teal-700 mb-6">Register New Agent</h2>
+        <form id="agentForm" class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="agentName" class="block text-sm font-medium text-gray-700 mb-1">Full Name*</label>
+              <input type="text" id="agentName" placeholder="Agent Name" required
+                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+            <div>
+              <label for="agentLocation" class="block text-sm font-medium text-gray-700 mb-1">Location*</label>
+              <input type="text" id="agentLocation" placeholder="City, Country" required
+                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="agentContact" class="block text-sm font-medium text-gray-700 mb-1">Contact Email*</label>
+              <input type="email" id="agentContact" placeholder="agent@example.com" required
+                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+            <div>
+              <label for="agentPhone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+              <input type="tel" id="agentPhone" placeholder="+1 (555) 123-4567"
+                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+          </div>
+          
+          <div>
+            <label for="agentSpecialty" class="block text-sm font-medium text-gray-700 mb-1">Specialty*</label>
+            <select id="agentSpecialty" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+              <option value="" disabled selected>Select specialty</option>
+              <option value="financial">Financial Assistance</option>
+              <option value="housing">Housing Support</option>
+              <option value="medical">Medical/Healthcare</option>
+              <option value="education">Education Services</option>
+              <option value="employment">Employment Assistance</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="agentBio" class="block text-sm font-medium text-gray-700 mb-1">Bio/Description</label>
+            <textarea id="agentBio" rows="3" placeholder="Brief description of the agent's background and expertise..."
+                      class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="flex items-center h-5">
+              <input id="agentVerification" name="agentVerification" type="checkbox" required 
+                     class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="agentVerification" class="font-medium text-gray-700">I verify this agent has been properly vetted and approved*</label>
+            </div>
+          </div>
+          
+          <button type="submit"
+                  class="w-full md:w-auto px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg shadow-md transition">
+            Register Agent
+          </button>
+        </form>
+        <div id="agentFormMessage" class="mt-4 text-center"></div>
+      </section>
+
+      <!-- Agent List -->
+      <section class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-semibold text-teal-700">Our Agents</h2>
+          <div class="relative">
+            <input type="text" id="agentSearch" placeholder="Search agents..." 
+                   class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+            <i class="fas fa-search absolute right-3 top-2.5 text-gray-400"></i>
+          </div>
+        </div>
+        
+        <div id="agentDisplayArea" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Agents will be loaded here -->
+        </div>
+        
+        <div id="noAgentsMessage" class="text-center py-8 text-gray-500 hidden">
+          <i class="fas fa-user-circle text-5xl mb-4"></i>
+          <p class="text-xl">No agents found</p>
+          <p>Try adjusting your search or register a new agent</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h3 class="text-xl font-bold text-white mb-2">HelpHub</h3>
+          <p class="text-sm">Connecting communities through support</p>
+        </div>
+        <div class="flex gap-4">
+          <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-6 pt-6 text-sm text-center">
+        <p>&copy; 2023 HelpHub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // DOM Elements
+    const agentForm = document.getElementById("agentForm");
+    const agentDisplayArea = document.getElementById("agentDisplayArea");
+    const agentFormMessage = document.getElementById("agentFormMessage");
+    const noAgentsMessage = document.getElementById("noAgentsMessage");
+    const agentSearch = document.getElementById("agentSearch");
+    
+    // Mobile menu functionality
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      // Toggle between hamburger and close icon
+      const icon = mobileMenuButton.querySelector('i');
+      if (mobileMenu.classList.contains('hidden')) {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      } else {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      }
+    });
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuButton.querySelector('i').classList.remove('fa-times');
+        mobileMenuButton.querySelector('i').classList.add('fa-bars');
+      });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
+        mobileMenu.classList.add('hidden');
+        const icon = mobileMenuButton.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    // Sample agent data structure
+    const sampleAgents = [
+      {
+        name: "Fatima Shaikh",
+        location: "Mumbai, India",
+        contact: "fatima@helphub.org",
+        phone: "+91 98765 43210",
+        specialty: "Housing Support",
+        bio: "Specializes in connecting families with affordable housing options and rental assistance programs."
+      },
+      {
+        name: "Rahul Mehta",
+        location: "Delhi, India",
+        contact: "rahul@helphub.org",
+        phone: "+91 98765 12340",
+        specialty: "Employment Assistance",
+        bio: "Helps job seekers with resume building, interview preparation, and connecting with employers."
+      },
+      {
+        name: "Priya Patel",
+        location: "Bangalore, India",
+        contact: "priya@helphub.org",
+        phone: "+91 98765 56780",
+        specialty: "Education Services",
+        bio: "Works with students and families to access educational resources and scholarship opportunities."
+      }
+    ];
+    
+    // Load agents from localStorage or initialize with sample data
+    function initializeAgents() {
+      const existingAgents = JSON.parse(localStorage.getItem("agents"));
+      if (!existingAgents || existingAgents.length === 0) {
+        localStorage.setItem("agents", JSON.stringify(sampleAgents));
+      }
+    }
+    
+    // Display agents with optional search filter
+    function displayAgents(searchTerm = "") {
+      agentDisplayArea.innerHTML = "";
+      const agents = JSON.parse(localStorage.getItem("agents")) || [];
+      
+      const filteredAgents = searchTerm 
+        ? agents.filter(agent => 
+            agent.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            agent.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            agent.specialty.toLowerCase().includes(searchTerm.toLowerCase()))
+        : agents;
+      
+      if (filteredAgents.length === 0) {
+        noAgentsMessage.classList.remove("hidden");
+      } else {
+        noAgentsMessage.classList.add("hidden");
+        filteredAgents.forEach(agent => {
+          const card = document.createElement("div");
+          card.className = "bg-gray-50 rounded-lg shadow-md p-6 hover:shadow-lg transition";
+          card.innerHTML = `
+            <div class="flex items-start mb-4">
+              <div class="bg-teal-100 text-teal-600 rounded-full p-3 mr-4">
+                <i class="fas fa-user-tie text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800">${agent.name}</h3>
+                <p class="text-sm text-teal-600">${agent.specialty}</p>
+              </div>
+            </div>
+            <div class="space-y-2 text-sm text-gray-600">
+              <p class="flex items-center">
+                <i class="fas fa-map-marker-alt mr-2 text-teal-600"></i>
+                ${agent.location}
+              </p>
+              <p class="flex items-center">
+                <i class="fas fa-envelope mr-2 text-teal-600"></i>
+                ${agent.contact}
+              </p>
+              ${agent.phone ? `
+              <p class="flex items-center">
+                <i class="fas fa-phone mr-2 text-teal-600"></i>
+                ${agent.phone}
+              </p>
+              ` : ''}
+              ${agent.bio ? `
+              <div class="mt-3 pt-3 border-t border-gray-200">
+                <p>${agent.bio}</p>
+              </div>
+              ` : ''}
+            </div>
+          `;
+          agentDisplayArea.appendChild(card);
+        });
+      }
+    }
+    
+    // Handle form submission
+    agentForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      
+      const newAgent = {
+        name: document.getElementById("agentName").value.trim(),
+        location: document.getElementById("agentLocation").value.trim(),
+        contact: document.getElementById("agentContact").value.trim(),
+        phone: document.getElementById("agentPhone").value.trim(),
+        specialty: document.getElementById("agentSpecialty").value,
+        bio: document.getElementById("agentBio").value.trim()
+      };
+      
+      // Save agent
+      const agents = JSON.parse(localStorage.getItem("agents")) || [];
+      agents.push(newAgent);
+      localStorage.setItem("agents", JSON.stringify(agents));
+      
+      // Show success message
+      agentFormMessage.innerHTML = `
+        <div class="inline-flex items-center text-green-600">
+          <i class="fas fa-check-circle mr-2"></i>
+          Agent ${newAgent.name} registered successfully!
+        </div>
+      `;
+      
+      // Reset form and update display
+      agentForm.reset();
+      displayAgents();
+      agentSearch.value = "";
+      
+      // Clear message after 3 seconds
+      setTimeout(() => {
+        agentFormMessage.innerHTML = "";
+      }, 3000);
+    });
+    
+    // Handle search
+    agentSearch.addEventListener("input", (e) => {
+      displayAgents(e.target.value);
+    });
+    
+    // Initialize on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      initializeAgents();
+      displayAgents();
+    });
+  </script>
+</body>
+</html>

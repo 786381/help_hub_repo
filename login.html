@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer Portal - HelpHub</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .auth-bg {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(236, 253, 245, 0.8)), 
+                        url('https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-teal-700 text-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+        <i class="fas fa-hands-helping text-2xl mr-2"></i>
+        <h1 class="text-xl font-bold">HelpHub Volunteer Portal</h1>
+      </div>
+      <nav>
+        <button id="toggleAuthForm" class="text-white hover:text-teal-200 transition">
+          <span id="toggleText">Register</span> <i class="fas fa-arrow-right ml-1"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-12">
+    <div class="max-w-md mx-auto">
+      <!-- Auth Forms Container -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Login Form (default visible) -->
+        <div id="loginForm" class="p-8">
+          <h2 class="text-2xl font-bold text-teal-700 mb-1">Volunteer Login</h2>
+          <p class="text-gray-600 mb-6">Welcome back! Please sign in to continue.</p>
+          
+          <form id="loginFormElement" class="space-y-4">
+            <div>
+              <label for="loginEmail" class="block text-sm font-medium text-gray-700 mb-1">Email*</label>
+              <input type="email" id="loginEmail" required
+                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+            
+            <div>
+              <label for="loginPassword" class="block text-sm font-medium text-gray-700 mb-1">Password*</label>
+              <div class="relative">
+                <input type="password" id="loginPassword" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+                <button type="button" id="toggleLoginPassword" class="absolute right-3 top-2.5 text-gray-500">
+                  <i class="far fa-eye"></i>
+                </button>
+              </div>
+              <div class="flex justify-end mt-1">
+                <a href="#" class="text-sm text-teal-600 hover:underline">Forgot password?</a>
+              </div>
+            </div>
+            
+            <button type="submit" 
+                    class="w-full bg-teal-600 hover:bg-teal-700 text-white font-medium py-2 px-4 rounded-md transition">
+              Sign In
+            </button>
+          </form>
+          
+          <div id="loginMessage" class="mt-4 text-center"></div>
+        </div>
+
+        <!-- Register Form (hidden by default) -->
+        <div id="registerForm" class="p-8 hidden auth-bg">
+          <h2 class="text-2xl font-bold text-teal-700 mb-1">Become a Volunteer</h2>
+          <p class="text-gray-600 mb-6">Join our community of helpers today.</p>
+          
+          <form id="registerFormElement" class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="regFirstName" class="block text-sm font-medium text-gray-700 mb-1">First Name*</label>
+                <input type="text" id="regFirstName" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+              </div>
+              <div>
+                <label for="regLastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name*</label>
+                <input type="text" id="regLastName" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+              </div>
+            </div>
+            
+            <div>
+              <label for="regEmail" class="block text-sm font-medium text-gray-700 mb-1">Email*</label>
+              <input type="email" id="regEmail" required
+                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+            
+            <div>
+              <label for="regPhone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+              <input type="tel" id="regPhone"
+                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+            
+            <div>
+              <label for="regPassword" class="block text-sm font-medium text-gray-700 mb-1">Password*</label>
+              <div class="relative">
+                <input type="password" id="regPassword" required minlength="8"
+                       class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+                <button type="button" id="toggleRegPassword" class="absolute right-3 top-2.5 text-gray-500">
+                  <i class="far fa-eye"></i>
+                </button>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">Minimum 8 characters</p>
+            </div>
+            
+            <div>
+              <label for="regConfirmPassword" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password*</label>
+              <div class="relative">
+                <input type="password" id="regConfirmPassword" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+                <button type="button" id="toggleRegConfirmPassword" class="absolute right-3 top-2.5 text-gray-500">
+                  <i class="far fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex items-center h-5">
+                <input id="regTerms" type="checkbox" required
+                       class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+              </div>
+              <div class="ml-3 text-sm">
+                <label for="regTerms" class="font-medium text-gray-700">
+                  I agree to the <a href="#" class="text-teal-600 hover:underline">Terms of Service</a> and <a href="#" class="text-teal-600 hover:underline">Privacy Policy</a>*
+                </label>
+              </div>
+            </div>
+            
+            <button type="submit" 
+                    class="w-full bg-teal-600 hover:bg-teal-700 text-white font-medium py-2 px-4 rounded-md transition">
+              Register
+            </button>
+          </form>
+          
+          <div id="registerMessage" class="mt-4 text-center"></div>
+        </div>
+      </div>
+      
+      <!-- Demo Notice -->
+      <!-- <div class="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-center">
+        <p class="text-yellow-700">Note: This is a demo. Data is stored in your browser's localStorage.</p>
+      </div> -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <div class="flex justify-center gap-4 mb-4">
+        <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="text-sm">&copy; 2023 HelpHub Volunteer Network. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // DOM Elements
+    const toggleAuthForm = document.getElementById('toggleAuthForm');
+    const toggleText = document.getElementById('toggleText');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const loginFormElement = document.getElementById('loginFormElement');
+    const registerFormElement = document.getElementById('registerFormElement');
+    const loginMessage = document.getElementById('loginMessage');
+    const registerMessage = document.getElementById('registerMessage');
+    
+    // Password visibility toggles
+    const toggleLoginPassword = document.getElementById('toggleLoginPassword');
+    const loginPassword = document.getElementById('loginPassword');
+    const toggleRegPassword = document.getElementById('toggleRegPassword');
+    const regPassword = document.getElementById('regPassword');
+    const toggleRegConfirmPassword = document.getElementById('toggleRegConfirmPassword');
+    const regConfirmPassword = document.getElementById('regConfirmPassword');
+    
+    // Toggle between login and register forms
+    toggleAuthForm.addEventListener('click', () => {
+      loginForm.classList.toggle('hidden');
+      registerForm.classList.toggle('hidden');
+      toggleText.textContent = loginForm.classList.contains('hidden') ? 'Login' : 'Register';
+    });
+    
+    // Toggle password visibility
+    function setupPasswordToggle(button, input) {
+      button.addEventListener('click', () => {
+        const isPassword = input.type === 'password';
+        input.type = isPassword ? 'text' : 'password';
+        button.innerHTML = isPassword ? '<i class="far fa-eye-slash"></i>' : '<i class="far fa-eye"></i>';
+      });
+    }
+    
+    setupPasswordToggle(toggleLoginPassword, loginPassword);
+    setupPasswordToggle(toggleRegPassword, regPassword);
+    setupPasswordToggle(toggleRegConfirmPassword, regConfirmPassword);
+    
+    // Check if passwords match
+    function checkPasswordsMatch() {
+      if (regPassword.value !== regConfirmPassword.value) {
+        regConfirmPassword.setCustomValidity("Passwords don't match");
+        return false;
+      } else {
+        regConfirmPassword.setCustomValidity('');
+        return true;
+      }
+    }
+    
+    regPassword.addEventListener('input', checkPasswordsMatch);
+    regConfirmPassword.addEventListener('input', checkPasswordsMatch);
+    
+    // Handle registration
+    registerFormElement.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      if (!checkPasswordsMatch()) {
+        registerMessage.textContent = "Passwords don't match!";
+        registerMessage.className = "mt-4 text-center text-red-600";
+        return;
+      }
+      
+      // Get form values
+      const user = {
+        firstName: document.getElementById('regFirstName').value.trim(),
+        lastName: document.getElementById('regLastName').value.trim(),
+        email: document.getElementById('regEmail').value.trim(),
+        phone: document.getElementById('regPhone').value.trim(),
+        password: document.getElementById('regPassword').value,
+        joined: new Date().toISOString()
+      };
+      
+      // Check if user already exists
+      const users = JSON.parse(localStorage.getItem('volunteerUsers')) || [];
+      const userExists = users.some(u => u.email === user.email);
+      
+      if (userExists) {
+        registerMessage.textContent = "An account with this email already exists!";
+        registerMessage.className = "mt-4 text-center text-red-600";
+        return;
+      }
+      
+      // Save user (in a real app, you would hash the password first!)
+      users.push(user);
+      localStorage.setItem('volunteerUsers', JSON.stringify(users));
+      
+      // Show success message
+      registerMessage.innerHTML = `
+        <div class="text-green-600">
+          <i class="fas fa-check-circle mr-1"></i> Registration successful! You can now login.
+        </div>
+      `;
+      
+      // Switch to login form
+      setTimeout(() => {
+        registerFormElement.reset();
+        loginForm.classList.remove('hidden');
+        registerForm.classList.add('hidden');
+        toggleText.textContent = 'Register';
+        registerMessage.textContent = '';
+      }, 2000);
+    });
+    
+    // Handle login
+    loginFormElement.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value;
+      
+      // Check credentials (in a real app, you would verify hashed passwords)
+      const users = JSON.parse(localStorage.getItem('volunteerUsers')) || [];
+      const user = users.find(u => u.email === email && u.password === password);
+      
+      if (user) {
+        // Save current user session
+        sessionStorage.setItem('currentVolunteer', JSON.stringify(user));
+        
+        // Show success message
+        loginMessage.innerHTML = `
+          <div class="text-green-600">
+            <i class="fas fa-check-circle mr-1"></i> Login successful! Redirecting...
+          </div>
+        `;
+        
+        // Redirect to dashboard (in a real app)
+        setTimeout(() => {
+          window.location.href = 'volunteer-dashboard.html';
+        }, 1500);
+      } else {
+        loginMessage.textContent = "Invalid email or password!";
+        loginMessage.className = "mt-4 text-center text-red-600";
+      }
+    });
+    
+    // Check if user is already logged in
+    window.addEventListener('DOMContentLoaded', () => {
+      const currentUser = sessionStorage.getItem('currentVolunteer');
+      if (currentUser) {
+        window.location.href = 'volunteer-dashboard.html';
+      }
+    });
+  </script>
+</body>
+</html>

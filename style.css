@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+  text-align: center;
+}
+
+header {
+  background-color: #00796b;
+  padding: 40px 20px 10px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3em;
+  color: #f9f9f9;
+}
+
+header p {
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #d2b6b6;
+}
+
+nav {
+  background-color: #b7e4b2;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav a {
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #222;
+  font-size: 1em;
+}
+
+nav a:hover {
+  color: #00796b;
+}
+
+.tagline {
+  margin: 50px 0;
+  font-size: 2em;
+  color: #d2c7c7;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  background-image: url("background.jpg") ;
+  height: 450px;
+width: 1000px;  
+}
+
+#request-form {
+  margin: 30px auto;
+  max-width: 600px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#request-form h2 {
+  margin-bottom: 20px;
+  color: #00796b;
+}
+
+#helpForm input,
+#helpForm textarea {
+  width: 90%;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#helpForm button {
+  background-color: #00796b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#helpForm button:hover {
+  background-color: #00564d;
+}
+
+#formResponse {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+}
+
+
+

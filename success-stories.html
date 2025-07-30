@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Success Stories - HelpHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .stories-hero {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(236, 253, 245, 0.8)), 
+                        url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-white to-cyan-100 font-sans min-h-screen">
+
+  <!-- Header Section -->
+  <header class="bg-cyan-100 py-6 md:py-10">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <div>
+        <h1 class="text-3xl md:text-4xl font-bold text-teal-700">HelpHub</h1>
+        <p class="text-base md:text-lg text-gray-600 mt-1 md:mt-2">Success Stories</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <button id="mobile-menu-button" class="md:hidden p-2 rounded-full bg-gray-200 text-gray-700">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="bg-gray-100 shadow-md">
+    <div class="container mx-auto px-4">
+      <!-- Mobile menu (hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden py-2">
+        <div class="flex flex-col space-y-3 text-gray-800 font-semibold">
+          <a href="index.html" class="block px-3 py-2 rounded hover:bg-gray-200 hover:text-teal-700 transition">Home</a>
+          <a href="requesthelp.html" class="block px-3 py-2 rounded hover:bg-gray-200 hover:text-teal-700 transition">Request Help</a>
+          <a href="givenhelp.html" class="block px-3 py-2 rounded hover:bg-gray-200 hover:text-teal-700 transition">Give Help</a>
+          <a href="agent.html" class="block px-3 py-2 rounded hover:bg-gray-200 hover:text-teal-700 transition">Agents</a>
+          <a href="success-stories.html" class="block px-3 py-2 rounded bg-teal-100 text-teal-700 font-bold">Success Stories</a>
+          <a href="contact.html" class="block px-3 py-2 rounded hover:bg-gray-200 hover:text-teal-700 transition">Contact</a>
+        </div>
+      </div>
+      
+      <!-- Desktop menu (hidden on mobile) -->
+      <div class="hidden md:block py-4">
+        <div class="flex flex-wrap justify-center gap-6 text-gray-800 font-semibold">
+          <a href="index.html" class="hover:text-teal-700 transition">Home</a>
+          <a href="requesthelp.html" class="hover:text-teal-700 transition">Request Help</a>
+          <a href="givenhelp.html" class="hover:text-teal-700 transition">Give Help</a>
+          <a href="agent.html" class="hover:text-teal-700 transition">Agents</a>
+          <a href="success-stories.html" class="text-teal-700 font-bold">Success Stories</a>
+          <a href="contact.html" class="hover:text-teal-700 transition">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-12">
+    <div class="max-w-6xl mx-auto">
+      <!-- Hero Section -->
+      <section class="stories-hero rounded-xl shadow-lg p-8 md:p-12 mb-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Real Stories of Hope</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Discover how HelpHub has transformed lives and strengthened communities
+        </p>
+      </section>
+
+      <!-- Share Story Form -->
+      <section class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-12">
+        <h2 class="text-2xl font-semibold text-teal-700 mb-6">Share Your Story</h2>
+        <form id="storyForm" class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="storyName" class="block text-sm font-medium text-gray-700 mb-1">Your Name*</label>
+              <input type="text" id="storyName" placeholder="Your name or nickname" required
+                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+            <div>
+              <label for="storyLocation" class="block text-sm font-medium text-gray-700 mb-1">Location</label>
+              <input type="text" id="storyLocation" placeholder="City, Country"
+                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+          </div>
+          
+          <div>
+            <label for="storyTitle" class="block text-sm font-medium text-gray-700 mb-1">Story Title*</label>
+            <input type="text" id="storyTitle" placeholder="A short title for your story" required
+                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+          </div>
+          
+          <div>
+            <label for="storyText" class="block text-sm font-medium text-gray-700 mb-1">Your Story*</label>
+            <textarea id="storyText" rows="6" placeholder="Share your experience with HelpHub..." required
+                      class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+          </div>
+          
+          <div>
+            <label for="storyImage" class="block text-sm font-medium text-gray-700 mb-1">Photo (URL)</label>
+            <input type="url" id="storyImage" placeholder="https://example.com/photo.jpg"
+                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+          </div>
+          
+          <div class="flex items-start">
+            <div class="flex items-center h-5">
+              <input id="storyConsent" name="storyConsent" type="checkbox" required 
+                     class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="storyConsent" class="font-medium text-gray-700">I agree to share my story publicly on HelpHub*</label>
+            </div>
+          </div>
+          
+          <button type="submit"
+                  class="w-full md:w-auto px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg shadow-md transition">
+            Share Your Story
+          </button>
+        </form>
+        <div id="storyFormMessage" class="mt-4 text-center"></div>
+      </section>
+
+      <!-- Stories Gallery -->
+      <section class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-semibold text-teal-700">Inspiring Journeys</h2>
+          <div class="relative">
+            <input type="text" id="storySearch" placeholder="Search stories..." 
+                   class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+            <i class="fas fa-search absolute right-3 top-2.5 text-gray-400"></i>
+          </div>
+        </div>
+        
+        <div id="storyDisplayArea" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Stories will be loaded here -->
+        </div>
+        
+        <div id="noStoriesMessage" class="text-center py-8 text-gray-500 hidden">
+          <i class="fas fa-book-open text-5xl mb-4"></i>
+          <p class="text-xl">No stories found</p>
+          <p>Be the first to share your success story!</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h3 class="text-xl font-bold text-white mb-2">HelpHub</h3>
+          <p class="text-sm">Transforming lives through community support</p>
+        </div>
+        <div class="flex gap-4">
+          <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-6 pt-6 text-sm text-center">
+        <p>&copy; 2023 HelpHub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // DOM Elements
+    const storyForm = document.getElementById("storyForm");
+    const storyDisplayArea = document.getElementById("storyDisplayArea");
+    const storyFormMessage = document.getElementById("storyFormMessage");
+    const noStoriesMessage = document.getElementById("noStoriesMessage");
+    const storySearch = document.getElementById("storySearch");
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    // Mobile menu functionality
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      // Toggle between hamburger and close icon
+      const icon = mobileMenuButton.querySelector('i');
+      if (mobileMenu.classList.contains('hidden')) {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      } else {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      }
+    });
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuButton.querySelector('i').classList.remove('fa-times');
+        mobileMenuButton.querySelector('i').classList.add('fa-bars');
+      });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
+        mobileMenu.classList.add('hidden');
+        const icon = mobileMenuButton.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    // Sample success stories
+    const sampleStories = [
+      {
+        name: "Rahul Sharma",
+        location: "Delhi, India",
+        title: "From Homeless to Hopeful",
+        text: "After losing my job during the pandemic, I found myself without a home. HelpHub connected me with a shelter and job training program. Today, I have stable housing and a new career in web development. The support I received changed my life.",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+        date: "2023-05-15"
+      },
+      {
+        name: "Priya Patel",
+        location: "Mumbai, India",
+        title: "Educational Dreams Achieved",
+        text: "As a first-generation college student, I struggled to afford textbooks and tuition. Through HelpHub, I received scholarships and mentorship that helped me graduate with honors. Now I'm paying it forward by tutoring other students in my community.",
+        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80",
+        date: "2023-03-22"
+      },
+      {
+        name: "Amit & Sunita",
+        location: "Bangalore, India",
+        title: "Our Small Business Thrives",
+        text: "When our restaurant was struggling to stay open, HelpHub connected us with financial advisors and local food banks. We not only survived but expanded, now employing 12 people from our neighborhood. The community support was incredible.",
+        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        date: "2023-01-10"
+      }
+    ];
+    
+    // Initialize stories in localStorage
+    function initializeStories() {
+      const existingStories = JSON.parse(localStorage.getItem("stories"));
+      if (!existingStories || existingStories.length === 0) {
+        localStorage.setItem("stories", JSON.stringify(sampleStories));
+      }
+    }
+    
+    // Display stories with optional search filter
+    function displayStories(searchTerm = "") {
+      storyDisplayArea.innerHTML = "";
+      const stories = JSON.parse(localStorage.getItem("stories")) || [];
+      
+      const filteredStories = searchTerm 
+        ? stories.filter(story => 
+            story.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            story.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            story.text.toLowerCase().includes(searchTerm.toLowerCase()))
+        : stories;
+      
+      if (filteredStories.length === 0) {
+        noStoriesMessage.classList.remove("hidden");
+      } else {
+        noStoriesMessage.classList.add("hidden");
+        filteredStories.forEach(story => {
+          const card = document.createElement("div");
+          card.className = "bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition";
+          card.innerHTML = `
+            <div class="h-48 overflow-hidden">
+              <img src="${story.image || 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'}" 
+                   alt="${story.name}'s story" 
+                   class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-teal-700 mb-2">${story.title}</h3>
+              <div class="flex items-center mb-3">
+                <div class="bg-teal-100 text-teal-600 rounded-full p-2 mr-3">
+                  <i class="fas fa-user text-sm"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-gray-800">${story.name}</p>
+                  ${story.location ? `<p class="text-xs text-gray-500">${story.location}</p>` : ''}
+                </div>
+              </div>
+              <p class="text-gray-600 mb-4 line-clamp-3">${story.text}</p>
+              <button class="text-teal-600 font-medium hover:underline"
+                      onclick="openStoryModal('${story.name}', '${story.location || ''}', '${story.title}', '${story.text}', '${story.image || ''}')">
+                Read full story
+              </button>
+            </div>
+          `;
+          storyDisplayArea.appendChild(card);
+        });
+      }
+    }
+    
+    // Open story modal
+    function openStoryModal(name, location, title, text, image) {
+      const modal = document.createElement("div");
+      modal.className = "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4";
+      modal.innerHTML = `
+        <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+          <div class="sticky top-0 bg-white p-4 flex justify-between items-center border-b border-gray-200">
+            <h3 class="text-xl font-semibold text-teal-700">${title}</h3>
+            <button onclick="this.parentElement.parentElement.parentElement.remove()" 
+                    class="text-gray-500 hover:text-gray-700">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="bg-teal-100 text-teal-600 rounded-full p-3 mr-4">
+                <i class="fas fa-user"></i>
+              </div>
+              <div>
+                <p class="font-medium text-gray-800">${name}</p>
+                ${location ? `<p class="text-sm text-gray-500">${location}</p>` : ''}
+              </div>
+            </div>
+            ${image ? `
+            <div class="mb-6 rounded-lg overflow-hidden">
+              <img src="${image}" alt="${name}'s story" class="w-full h-64 object-cover">
+            </div>
+            ` : ''}
+            <div class="prose max-w-none">
+              <p class="whitespace-pre-line">${text}</p>
+            </div>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+    }
+    
+    // Handle form submission
+    storyForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      
+      const newStory = {
+        name: document.getElementById("storyName").value.trim(),
+        location: document.getElementById("storyLocation").value.trim(),
+        title: document.getElementById("storyTitle").value.trim(),
+        text: document.getElementById("storyText").value.trim(),
+        image: document.getElementById("storyImage").value.trim(),
+        date: new Date().toISOString().split('T')[0]
+      };
+      
+      // Save story
+      const stories = JSON.parse(localStorage.getItem("stories")) || [];
+      stories.unshift(newStory); // Add to beginning of array
+      localStorage.setItem("stories", JSON.stringify(stories));
+      
+      // Show success message
+      storyFormMessage.innerHTML = `
+        <div class="inline-flex items-center text-green-600">
+          <i class="fas fa-check-circle mr-2"></i>
+          Thank you for sharing your story!
+        </div>
+      `;
+      
+      // Reset form and update display
+      storyForm.reset();
+      displayStories();
+      storySearch.value = "";
+      
+      // Clear message after 3 seconds
+      setTimeout(() => {
+        storyFormMessage.innerHTML = "";
+      }, 3000);
+    });
+    
+    // Handle search
+    storySearch.addEventListener("input", (e) => {
+      displayStories(e.target.value);
+    });
+    
+    // Initialize on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      initializeStories();
+      displayStories();
+    });
+  </script>
+</body>
+</html>
